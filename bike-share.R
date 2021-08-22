@@ -17,11 +17,12 @@ dim(tripdata_raw)
 glimpse(tripdata_raw)
 
 
-#create tripdata_1 as a sample of tripdata_raw with 10% of its size 
+#create tripdata_1 as a sample of tripdata_raw with 5% of its size 
+#http://www.raosoft.com/samplesize.html
 'Random Sampling
 Population Size: 4.460.151
 Confidence Level: 99%
-Margim of Error: 2%
+Margin of Error: 2%
 Sample Size: 4.143'
 
 sample_size = round(dim(tripdata_raw)[1]*0.05,0) #sample size of 5% = 223.008
@@ -30,7 +31,8 @@ set.seed(100)
 row_number = sample(1:nrow(tripdata_raw), sample_size)
 tripdata_1 = tripdata_raw[row_number,]
 
-
+glimpse(tripdata_1)
+str(tripdata_1)
 
 
 ### PROCESS
